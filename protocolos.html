@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protocolos | UDESODI</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif;}
+    body {background-color: #f0f2f5; color: #333;}
+    .container {max-width: 800px; margin: 0 auto; padding: 15px;}
+    
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      padding: 12px 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .logo {font-weight: bold; font-size: 20px; color: #1877f2;}
+    .nav-links {display: flex; gap: 20px;}
+    .nav-links a {text-decoration: none; color: #65676b; font-weight: 500;}
+    .nav-links a:hover {color: #1877f2;}
+    .nav-links a.active {color: #1877f2;}
+    
+    /* Contenido principal */
+    .main-content {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .main-content h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #1877f2;
+    }
+    
+    /* Botón agregar protocolo */
+    .add-protocol {
+      display: inline-block;
+      background-color: #1877f2;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .add-protocol:hover {
+      background-color: #166fe5;
+    }
+    
+    /* Lista de protocolos */
+    .protocols-list {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .protocols-list th {
+      text-align: left;
+      padding: 12px 10px;
+      border-bottom: 2px solid #e6e6e6;
+      color: #65676b;
+      font-weight: 600;
+    }
+    .protocols-list td {
+      padding: 15px 10px;
+      border-bottom: 1px solid #e6e6e6;
+    }
+    .protocol-link {
+      color: #1877f2;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .protocol-link:hover {
+      text-decoration: underline;
+    }
+    
+    /* Indicadores de estatus */
+    .status-indicator {
+      display: flex;
+      align-items: center;
+    }
+    .status-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+    .status-accepted {
+      background-color: #42b72a;
+    }
+    .status-rejected {
+      background-color: #e41e3f;
+    }
+    .status-pending {
+      background-color: #f7b928;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav class="navbar">
+      <div class="logo">UDESODI</div>
+      <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="protocolos.html" class="active">Protocolos</a>
+        <a href="reporte.html">Reportar un problema</a>
+      </div>
+    </nav>
+    
+    <div class="main-content">
+      <h1>Mis Protocolos</h1>
+      
+      <a href="agregar_protocolo.html" class="add-protocol">
+        + Agregar Protocolo
+      </a>
+      
+      <table class="protocols-list">
+        <thead>
+          <tr>
+            <th>Nombre del Protocolo</th>
+            <th>Fecha de Envío</th>
+            <th>Estatus</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <a href="protocolo_inmunomoduladores.html" class="protocol-link">
+                Evaluación de la efectividad de Inmunomoduladores en pacientes con COVID-19 persistente
+              </a>
+            </td>
+            <td>03/04/2025</td>
+            <td>
+              <div class="status-indicator">
+                <div class="status-dot status-accepted"></div>
+                Aceptado
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="protocolo_biomarcadores.html" class="protocol-link">
+                Identificación de biomarcadores para la detección temprana de Alzheimer
+              </a>
+            </td>
+            <td>15/03/2025</td>
+            <td>
+              <div class="status-indicator">
+                <div class="status-dot status-rejected"></div>
+                Rechazado
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="protocolo_rna.html" class="protocol-link">
+                Terapia basada en ARN mensajero para enfermedades autoinmunes
+              </a>
+            </td>
+            <td>29/04/2025</td>
+            <td>
+              <div class="status-indicator">
+                <div class="status-dot status-pending"></div>
+                Pendiente
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

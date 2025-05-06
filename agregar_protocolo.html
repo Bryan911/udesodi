@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agregar Protocolo | UDESODI</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif;}
+    body {background-color: #f0f2f5; color: #333;}
+    .container {max-width: 800px; margin: 0 auto; padding: 15px;}
+    
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      padding: 12px 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .logo {font-weight: bold; font-size: 20px; color: #1877f2;}
+    .nav-links {display: flex; gap: 20px;}
+    .nav-links a {text-decoration: none; color: #65676b; font-weight: 500;}
+    .nav-links a:hover {color: #1877f2;}
+    .nav-links a.active {color: #1877f2;}
+    
+    /* Contenido principal */
+    .main-content {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .main-content h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #1877f2;
+    }
+    
+    /* Formulario */
+    .protocol-form {
+      width: 100%;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 5px;
+      color: #444;
+    }
+    .form-group input, 
+    .form-group select, 
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+    .form-group textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+    .form-group input[type="range"] {
+      margin-bottom: 5px;
+    }
+    .range-output {
+      display: inline-block;
+      background: #1877f2;
+      color: white;
+      padding: 3px 8px;
+      border-radius: 10px;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+    .optional-label {
+      color: #65676b;
+      font-size: 12px;
+      margin-left: 5px;
+    }
+    .submit-btn {
+      background-color: #1877f2;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .submit-btn:hover {
+      background-color: #166fe5;
+    }
+    .form-section {
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #e6e6e6;
+    }
+    .form-section-title {
+      font-size: 18px;
+      color: #1877f2;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav class="navbar">
+      <div class="logo">UDESODI</div>
+      <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="protocolos.html">Protocolos</a>
+        <a href="reporte.html">Reportar un problema</a>
+      </div>
+    </nav>
+    
+    <div class="main-content">
+      <h1>Agregar Nuevo Protocolo</h1>
+      
+      <form class="protocol-form" action="#" method="POST">
+        <div class="form-section">
+          <div class="form-section-title">Información de Contacto</div>
+          
+          <div class="form-group">
+            <label for="correo_electronico">Correo Electrónico:</label>
+            <input type="email" name="correo_electronico" id="correo_electronico" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="numero_telefonico">Número Telefónico:</label>
+            <input type="text" name="numero_telefonico" id="numero_telefonico" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="fecha_reporte">Fecha del Reporte:</label>
+            <input type="date" name="fecha_reporte" id="fecha_reporte" required>
+          </div>
+        </div>
+        
+        <div class="form-section">
+          <div class="form-section-title">Información del Protocolo</div>
+          
+          <div class="form-group">
+            <label for="tipo_reporte">Tipo de Reporte:</label>
+            <select name="id_tipo_reporte" id="tipo_reporte" required>
+              <option value="1">Reporte inicial</option>
+              <option value="2">Reporte de seguimiento</option>
+              <option value="3">Reporte final</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="numero_registro">Número de Registro:</label>
+            <input type="text" name="numero_registro" id="numero_registro" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="titulo_protocolo">Título del Protocolo:</label>
+            <input type="text" name="titulo_protocolo" id="titulo_protocolo" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="tipo_protocolo">Tipo de Protocolo:</label>
+            <select name="id_tipo_protocolo" id="tipo_protocolo" required>
+              <option value="1">Investigación clínica</option>
+              <option value="2">Investigación básica</option>
+              <option value="3">Ensayo clínico</option>
+              <option value="4">Estudio observacional</option>
+              <option value="5">Revisión sistemática</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="area_salud">Área de Salud:</label>
+            <select name="id_area_salud" id="area_salud" required>
+              <option value="1">Cardiología</option>
+              <option value="2">Neurología</option>
+              <option value="3">Oncología</option>
+              <option value="4">Inmunología</option>
+              <option value="5">Enfermedades infecciosas</option>
+              <option value="6">Salud mental</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-section">
+          <div class="form-section-title">Origen y Financiamiento</div>
+          
+          <div class="form-group">
+            <label for="origen_investigacion">Origen de la Investigación:</label>
+            <select name="id_origen_investigacion" id="origen_investigacion" required>
+              <option value="1">Institucional</option>
+              <option value="2">Colaboración interinstitucional</option>
+              <option value="3">Empresa privada</option>
+              <option value="4">Organismo internacional</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="tipo_financiamiento">Tipo de Financiamiento:</label>
+            <select name="id_tipo_financiamiento" id="tipo_financiamiento" required>
+              <option value="1">Interno</option>
+              <option value="2">Externo</option>
+              <option value="3">Mixto</option>
+              <option value="4">Sin financiamiento</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="fuente_financiamiento_externo">Fuente de Financiamiento Externo <span class="optional-label">(Opcional)</span>:</label>
+            <input type="text" name="fuente_financiamiento_externo" id="fuente_financiamiento_externo">
+          </div>
+          
+          <div class="form-group">
+            <label for="colaboradores_externos">Colaboradores Externos <span class="optional-label">(Opcional)</span>:</label>
+            <input type="text" name="colaboradores_externos" id="colaboradores_externos">
+          </div>
+        </div>
+        
+        <div class="form-section">
+          <div class="form-section-title">Duración y Planificación</div>
+          
+          <div class="form-group">
+            <label for="duracion_protocolo">Duración del Protocolo:</label>
+            <select name="id_duracion_protocolo" id="duracion_protocolo" required>
+              <option value="1">Menos de 6 meses</option>
+              <option value="2">6-12 meses</option>
+              <option value="3">1-2 años</option>
+              <option value="4">2-3 años</option>
+              <option value="5">Más de 3 años</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="avance_investigacion">Avance de la Investigación:</label>
+            <input type="range" id="avance" name="id_avance_investigacion" min="1" max="10" value="1" oninput="updateRangeValue(this.value)">
+            <div class="range-output" id="range-value">1</div>
+          </div>
+          
+          <div class="form-group">
+            <label for="fecha_programada_inicio">Fecha Programada de Inicio:</label>
+            <input type="date" name="fecha_programada_inicio" id="fecha_programada_inicio">
+          </div>
+          
+          <div class="form-group">
+            <label for="fecha_real_inicio">Fecha Real de Inicio:</label>
+            <input type="date" name="fecha_real_inicio" id="fecha_real_inicio">
+          </div>
+          
+          <div class="form-group">
+            <label for="fecha_estimada_termino">Fecha Estimada de Término:</label>
+            <input type="date" name="fecha_estimada_termino" id="fecha_estimada_termino">
+          </div>
+          
+          <div class="form-group">
+            <label for="fecha_real_termino">Fecha Real de Término:</label>
+            <input type="date" name="fecha_real_termino" id="fecha_real_termino">
+          </div>
+        </div>
+        
+        <div class="form-section">
+          <div class="form-section-title">Detalles del Estudio</div>
+          
+          <div class="form-group">
+            <label for="fase_estudio">Fase del Estudio:</label>
+            <select name="id_fase_estudio" id="fase_estudio" required>
+              <option value="1">Fase I</option>
+              <option value="2">Fase II</option>
+              <option value="3">Fase III</option>
+              <option value="4">Fase IV</option>
+              <option value="5">No aplica</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="producto_protocolo">Producto del Protocolo:</label>
+            <select name="id_producto_protocolo" id="producto_protocolo" required>
+              <option value="1">Publicación científica</option>
+              <option value="2">Patente</option>
+              <option value="3">Tesis</option>
+              <option value="4">Reporte técnico</option>
+              <option value="5">Otro</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="presentacion_foros">Presentación en Foros <span class="optional-label">(Opcional)</span>:</label>
+            <input type="text" name="presentacion_foros" id="presentacion_foros">
+          </div>
+          
+          <div class="form-group">
+            <label for="estatus_reclutamiento">Estatus de Reclutamiento:</label>
+            <select name="id_estatus_reclutamiento" id="estatus_reclutamiento" required>
+              <option value="1">No iniciado</option>
+              <option value="2">En proceso</option>
+              <option value="3">Completado</option>
+              <option value="4">Suspendido</option>
+              <option value="5">Cancelado</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="tamano_muestra_alcanzada">Tamaño de Muestra Alcanzada <span class="optional-label">(Opcional)</span>:</label>
+            <input type="text" name="tamano_muestra_alcanzada" id="tamano_muestra_alcanzada">
+          </div>
+        </div>
+        
+        <div class="form-section">
+          <div class="form-section-title">Resultados y Conclusiones</div>
+          
+          <div class="form-group">
+            <label for="objetivos_propuestos">Objetivos Propuestos:</label>
+            <textarea name="objetivos_propuestos" id="objetivos_propuestos" required></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label for="objetivos_alcanzados">Objetivos Alcanzados <span class="optional-label">(Opcional)</span>:</label>
+            <textarea name="objetivos_alcanzados" id="objetivos_alcanzados"></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label for="resultados">Resultados <span class="optional-label">(Opcional)</span>:</label>
+            <textarea name="resultados" id="resultados"></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label for="conclusiones">Conclusiones <span class="optional-label">(Opcional)</span>:</label>
+            <textarea name="conclusiones" id="conclusiones"></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label for="eventos_adversos">Eventos Adversos <span class="optional-label">(Opcional)</span>:</label>
+            <textarea name="eventos_adversos" id="eventos_adversos"></textarea>
+          </div>
+        </div>
+        
+        <button type="submit" class="submit-btn">Guardar Protocolo</button>
+      </form>
+    </div>
+  </div>
+  
+  <script>
+    function updateRangeValue(value) {
+      document.getElementById("range-value").innerText = value;
+    }
+  </script>
+</body>
+</html>
